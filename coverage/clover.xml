@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1615492631978" clover="3.2.0">
+  <project timestamp="1615492631978" name="All files">
+    <metrics statements="42" coveredstatements="36" conditionals="21" coveredconditionals="18" methods="23" coveredmethods="17" elements="86" coveredelements="71" complexity="0" loc="42" ncloc="42" packages="9" files="20" classes="20"/>
+    <package name="src">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.tsx" path="Y:\RN_JEST\src\App.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.tsx" path="Y:\RN_JEST\src\components\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.Button">
+      <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2"/>
+      <file name="Button.tsx" path="Y:\RN_JEST\src\components\Button\Button.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="15" count="43" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+      </file>
+      <file name="button.styles.tsx" path="Y:\RN_JEST\src\components\Button\button.styles.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="Y:\RN_JEST\src\components\Button\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.Input">
+      <metrics statements="4" coveredstatements="4" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="2"/>
+      <file name="Input.tsx" path="Y:\RN_JEST\src\components\Input\Input.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="2"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="Y:\RN_JEST\src\components\Input\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="input.styles.tsx" path="Y:\RN_JEST\src\components\Input\input.styles.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Text">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="Text.tsx" path="Y:\RN_JEST\src\components\Text\Text.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="Y:\RN_JEST\src\components\Text\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="text.styles.tsx" path="Y:\RN_JEST\src\components\Text\text.styles.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.containers">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.tsx" path="Y:\RN_JEST\src\containers\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.containers.Header">
+      <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+      <file name="Header.tsx" path="Y:\RN_JEST\src\containers\Header\Header.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="15" count="15" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+      </file>
+      <file name="header.styles.tsx" path="Y:\RN_JEST\src\containers\Header\header.styles.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="Y:\RN_JEST\src\containers\Header\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.containers.List">
+      <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="List.tsx" path="Y:\RN_JEST\src\containers\List\List.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="9" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="Y:\RN_JEST\src\containers\List\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="list.styles.tsx" path="Y:\RN_JEST\src\containers\List\list.styles.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.containers.Todo">
+      <metrics statements="17" coveredstatements="11" conditionals="4" coveredconditionals="1" methods="8" coveredmethods="4"/>
+      <file name="Todo.tsx" path="Y:\RN_JEST\src\containers\Todo\Todo.tsx">
+        <metrics statements="17" coveredstatements="11" conditionals="4" coveredconditionals="1" methods="8" coveredmethods="4"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="Y:\RN_JEST\src\containers\Todo\index.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+  </project>
+</coverage>
