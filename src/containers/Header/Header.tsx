@@ -16,6 +16,9 @@ export const Header: FC<HeaderProps> = ({
     <View style={{ flex: 1 }}>
       <StyledRow>
         <TextInput
+          inputProps={{
+            accessibilityLabel: 'todo_input',
+          }}
           value={showValue}
           onChange={(value) => updateItem(value)}
           styles={{ flex: 10 }}
@@ -24,7 +27,11 @@ export const Header: FC<HeaderProps> = ({
         <Button
           title="&#128260;"
           onPress={() => clearList()}
-          buttonProps={{ activeOpacity: 0.8, testID: 'clearButton' }}
+          buttonProps={{
+            activeOpacity: 0.8,
+            testID: 'clearButton',
+            accessibilityLabel: 'todo_clear_button',
+          }}
           buttonStyles={{ flex: 2 }}
         />
       </StyledRow>
@@ -32,7 +39,10 @@ export const Header: FC<HeaderProps> = ({
       <Button
         title="Adicionar à lista"
         onPress={() => onAdd(showValue)}
-        buttonProps={{ activeOpacity: 0.8 }}
+        buttonProps={{
+          activeOpacity: 0.8,
+          accessibilityLabel: 'todo_add_button',
+        }}
         buttonStyles={{ marginVertical: 12 }}
       />
     </View>

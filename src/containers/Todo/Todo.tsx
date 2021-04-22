@@ -13,17 +13,18 @@ export const Todo: FC = React.memo(() => {
   const [list, setList] = useState<Array<ListItemProps>>([]);
 
   useEffect(() => {
+    let hasPendingPromises = true;
     (async () => {
       const remoteList: Array<ListItemProps> = await api.getList();
       return setList(remoteList);
     })();
-    return () => {};
+    return () => (hasPendingPromises = false);
   }, []);
 
   const AddItem = (value: string): void => {
     if (!value.length) return;
 
-    list.push({ id: list.length + 1, name: value });
+    list.push({ id: new Date().getTime(), name: value });
     setItem('');
   };
 

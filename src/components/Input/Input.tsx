@@ -9,6 +9,7 @@ export const TextInput: React.FC<InputProps> = ({
   placeholder = '',
   onChange = () => {},
   editable = true,
+  inputProps,
 }) => {
   return (
     <StyledTextInput
@@ -18,6 +19,7 @@ export const TextInput: React.FC<InputProps> = ({
       placeholder={placeholder}
       style={styles}
       editable={editable}
+      {...inputProps}
     />
   );
 };

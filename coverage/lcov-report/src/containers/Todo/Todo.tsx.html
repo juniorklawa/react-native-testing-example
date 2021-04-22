@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.89% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/19</span>
+                <span class='fraction'>16/24</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">63.64% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>7/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.71% </span>
+                <span class="strong">76.19% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/17</span>
+                <span class='fraction'>16/21</span>
             </div>
         
             
@@ -104,7 +104,11 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,29 +117,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,14 +151,11 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, FC } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, FC, useEffect } from 'react';
 import { View } from 'react-native';
 &nbsp;
 import { Header } from '../Header';
@@ -159,9 +163,19 @@ import { List } from '../List';
 &nbsp;
 import { ListItemProps } from '../List/list.types';
 &nbsp;
-export const Todo: FC&lt;React.Component&gt; = () =&gt; {
+import api from '../../services/api';
+&nbsp;
+export const Todo: FC = React.memo(() =&gt; {
   const [item, setItem] = useState&lt;string&gt;('');
   const [list, setList] = useState&lt;Array&lt;ListItemProps&gt;&gt;([]);
+&nbsp;
+  useEffect(() =&gt; {
+    (async () =&gt; {
+      const remoteList: Array&lt;ListItemProps&gt; = await api.getList();
+      return setList(remoteList);
+    })();
+    return () =&gt; {};
+  }, []);
 &nbsp;
   const AddItem = (value: string): void =&gt; {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!value.length) <span class="cstat-no" title="statement not covered" >return;</span>
@@ -170,20 +184,15 @@ export const Todo: FC&lt;React.Component&gt; = () =&gt; {
     setItem('');
   };
 &nbsp;
-  const removeItem = <span class="fstat-no" title="function not covered" >(</span>
-    itemsList: Array&lt;ListItemProps&gt;,
-    target: ListItemProps
-  ) =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (!itemsList?.length) <span class="cstat-no" title="statement not covered" >return;</span></span>
+  const removeItem = <span class="fstat-no" title="function not covered" >(t</span>arget: ListItemProps) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!list?.length) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
-    const newItems = <span class="cstat-no" title="statement not covered" >itemsList.filter(</span>
-<span class="fstat-no" title="function not covered" >      (i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >item.id !== target.id</span>
-    );
+    const newItems = <span class="cstat-no" title="statement not covered" >list.filter(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >item.id !== target.id)</span>;</span>
 <span class="cstat-no" title="statement not covered" >    setList(newItems);</span>
   };
 &nbsp;
   return (
-    &lt;View style={{ flex: 1 }}&gt;
+    &lt;View style={{ flex: 1 }} accessibilityLabel="todo_container"&gt;
       &lt;Header
         showValue={item}
         updateItem={(value) =&gt; setItem(value)}
@@ -191,13 +200,10 @@ export const Todo: FC&lt;React.Component&gt; = () =&gt; {
         onAdd={(value) =&gt; AddItem(value)}
       /&gt;
 &nbsp;
-      &lt;List
-        list={list}
-        removeItem={<span class="fstat-no" title="function not covered" >(l</span>ist, item) =&gt; <span class="cstat-no" title="statement not covered" >removeItem(list, item)}</span>
-      /&gt;
+      &lt;List list={list} removeItem={<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >removeItem(item)}</span> /&gt;
     &lt;/View&gt;
   );
-};
+});
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -205,7 +211,7 @@ export const Todo: FC&lt;React.Component&gt; = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 11 2021 22:57:11 GMT+0300 (GMT+03:00)
+                at Sun Mar 14 2021 03:52:42 GMT+0300 (GMT+03:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

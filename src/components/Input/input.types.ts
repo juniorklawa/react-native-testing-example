@@ -1,4 +1,8 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import {
+  TextStyle,
+  ViewStyle,
+  AccessibilityProps,
+} from 'react-native';
 
 export interface InputProps {
   value: string;
@@ -6,4 +10,5 @@ export interface InputProps {
   placeholder?: string;
   onChange?: (value: string) => void;
   editable?: boolean;
+  inputProps?: AccessibilityProps;
 }

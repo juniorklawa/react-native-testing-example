@@ -14,6 +14,9 @@ exports.config = {
       app:
         'Y:/RN_JEST/android/app/build/outputs/apk/debug/app-debug.apk',
       automationName: 'UiAutomator2',
+      noReset: true,
+      dontStopAppOnReset: true,
+      fullReset: false,
     },
   ],
   logLevel: 'trace',

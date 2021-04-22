@@ -6,6 +6,14 @@ import { TextProps } from './text.types';
 export const Text: React.FC<TextProps> = ({
   styles = {},
   value = '',
+  accessibilityLabel,
 }) => {
-  return <StyledText style={{ ...styles }}>{value}</StyledText>;
+  return (
+    <StyledText
+      accessibilityLabel={accessibilityLabel}
+      style={{ ...styles }}
+    >
+      {value}
+    </StyledText>
+  );
 };

@@ -1,61 +1,47 @@
-var expect = require('chai').expect;
+/* eslint-disable no-undef */
 
-// $('~password').setValue('1234567');
-// $('~login').click();
+const firstButton = '1 - um item na lista';
+const secondButton = '2 - um outro item na lista';
+const thirdButton = '3 - mais um outro item na lista';
+const todoInput = 'todo_input';
+const addButton = 'todo_add_button';
+const clearButton = 'todo_clear_button';
 
 describe('Todo SUT ', () => {
   beforeEach(() => {
-    $('~app-root').waitForDisplayed(11000, false);
+    $('~todo_container').waitForDisplayed(11000, false);
+    $(`~${clearButton}`).click();
   });
 
-  it('Should render and find HUE text', (async) => {
+  it('Should add an item to the list', () => {
     $('~todo_container').waitForDisplayed(11000);
-    const hue = $('~hue').getText();
-    expect(hue).to.equal('HUE');
+    $(`~${todoInput}`).setValue(firstButton);
+    $(`~${addButton}`).click();
   });
 
-  // it('Should render', () => {
-  //   render(<Todo />);
-  // });
+  it('Should remove the second item list', () => {
+    $('~todo_container').waitForDisplayed(11000);
+    $(`~${todoInput}`).setValue(firstButton);
+    $(`~${addButton}`).click();
+    $(`~${todoInput}`).setValue(secondButton);
+    $(`~${addButton}`).click();
+    $(`~${todoInput}`).setValue(thirdButton);
+    $(`~${addButton}`).click();
 
-  // it('Should render with placeholder "Escreva algo !!!"', () => {
-  //   const { getByPlaceholderText } = render(
-  //     <Todo placeholder="Escreva algo !!!" />
-  //   );
-  //   expect(getByPlaceholderText('Escreva algo !!!')).toBeTruthy();
-  // });
+    $('~remove_item_2').waitForDisplayed(11000);
+    $(`~remove_item_1`).click();
+  });
 
-  // it('Should render with title "Simples Botão"', () => {
-  //   const { getByTestId } = render(<Todo />);
-  //   const sut = getByTestId('clearButton');
-  //   expect(sut).toBeTruthy();
-  // });
+  it('Should clear the list', () => {
+    $('~todo_container').waitForDisplayed(11000);
+    $(`~${todoInput}`).setValue(firstButton);
+    $(`~${addButton}`).click();
+    $(`~${todoInput}`).setValue(secondButton);
+    $(`~${addButton}`).click();
+    $(`~${todoInput}`).setValue(thirdButton);
+    $(`~${addButton}`).click();
 
-  // it('Should render with title "Adicionar à lista"', () => {
-  //   const { getByText } = render(<Todo />);
-  //   const sut = getByText('Adicionar à lista');
-  //   expect(sut).toBeTruthy();
-  //   expect(sut).toHaveStyleRule('color', '#fff');
-  // });
-
-  // it('Should should add items to the list after the press event', async () => {
-  //   const INITIAL_TEXT = 'changed_text';
-  //   const sut = render(<Todo placeholder="Escreva algo !!!" />);
-  //   const inputSut = sut.getByPlaceholderText('Escreva algo !!!');
-
-  //   fireEvent.changeText(inputSut, INITIAL_TEXT);
-
-  //   const addSut = sut.getByText('Adicionar à lista');
-  //   fireEvent.press(addSut);
-
-  //   const first = sut.getByText(INITIAL_TEXT);
-
-  //   fireEvent.changeText(inputSut, 'mais um');
-  //   fireEvent.press(addSut);
-
-  //   const second = sut.getByText('mais um');
-
-  //   expect(first).toBeTruthy();
-  //   expect(second).toBeTruthy();
-  // });
+    $('~remove_item_2').waitForDisplayed(11000);
+    $(`~${clearButton}`).click();
+  });
 });
